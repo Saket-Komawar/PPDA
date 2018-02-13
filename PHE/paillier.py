@@ -18,6 +18,7 @@ EncryptedBureauList = [publicKey.encrypt(x) for x in Bureau]
 EncryptedBasePayList = [publicKey.encrypt(x) for x in BasePay]
 
 with open('EncryptedData0.file', 'wb') as output:
+    pickle.dump(publicKey, output, pickle.HIGHEST_PROTOCOL)
     pickle.dump(EncryptedFiscalQuarterList, output, pickle.HIGHEST_PROTOCOL)
     pickle.dump(EncryptedBureauList, output, pickle.HIGHEST_PROTOCOL)
     pickle.dump(EncryptedBasePayList, output, pickle.HIGHEST_PROTOCOL)
